@@ -7,10 +7,7 @@
   "scripts": {
     "test": "node test.js"
   },
-  "bin": {
-    "tableify": "./bin/tableify"
-  },
-  "author": "Dan VerWeire",
+  "author": "Dan VerWeire, Yaniv Kessler",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {},
