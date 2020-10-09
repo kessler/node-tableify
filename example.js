@@ -1,8 +1,5 @@
 var tableify = require('./');
-var assert = require('assert');
-var fs = require('fs');
 
-var html = fs.readFileSync('test.html','utf8');
 var obj = {
 	test : {
 		data : [
@@ -45,12 +42,4 @@ var obj = {
 //create a circular reference
 obj.fish[0].b = obj.fish;
 
-assert.equal(tableify.htmlDoc(obj) + '\n', html);
-
-t = tableify.defaults({ classes : false })
-
-console.log(t(obj))
-
-t = tableify.defaults({ classPrefix : 'tblfy-' })
-
-console.log(t(obj))
+console.log(tableify.fancyHtmlDoc(obj))

@@ -1,5 +1,7 @@
-node-tableify
+@kessler/tableify
 -------------
+
+A fork of [tableify](https://github.com/wankdanker/node-tableify) modified specifically for [license-report](https://github.com/ironSource/license-report). I removed all the cli usage code and dependencies.
 
 From any JavaScript object, HTML tables create.
 
@@ -21,7 +23,7 @@ install
 -------
 
 ```bash
-npm install tableify
+npm install @kessler/tableify
 ```
 
 usage
@@ -30,7 +32,8 @@ usage
 ```javascript
 var tableify = require('tableify');
 
-var html = tableify({
+// embed the table in an html document with some styling
+var html = tableify.htmlDoc({
 	someArrayOfObjects : [
 		{ a : 1, b : 2, c : 3  }
 		, { a : 2, b : 3, c : 4 }
@@ -53,19 +56,6 @@ var html = tableify({
 });
 
 console.log(html);
-```
-
-command line usage
-------------------
-
-When installed with `npm install -g tableify` you get the tablify command line utility. 
-This is a simple command which accepts JSON from stdin and outputs html to stdout. I use
-it for emailing json files in a nice format for debugging purposes.
-
-The --style option prepends a &lt;style&gt; tag with some default css
-
-```bash
-cat datafile.json | tableify --style | mutt -e 'set content_type="text/html"' me@myaddress.com
 ```
 
 license
