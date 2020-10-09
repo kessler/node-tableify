@@ -2,7 +2,7 @@
 -------------
 
 A fork of [tableify](https://github.com/wankdanker/node-tableify).
-All the cli rekated code and dependencies is removed.
+All the cli related code and dependencies were removed.
 Add public methods for generating a complete html document with styling:
 ```js
 var tableify = require('tableify')
