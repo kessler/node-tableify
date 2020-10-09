@@ -7,7 +7,7 @@ module.exports = init({});
 
 module.exports.defaults = init;
 
-module.exports.htmlDocImpl = function(obj, config = {}, style) {
+module.exports.htmlDoc = function(obj, config = {}, style) {
     if (!style) {
         style = fs.readFileSync(path.join(__dirname, 'simple.css'))
     }
@@ -22,10 +22,8 @@ ${init(config)(obj)}
 </html>`
 }
 
-module.exports.htmlDoc = module.exports.htmlDocImpl
-
 module.exports.fancyHtmlDoc = function(obj, config) {
-    return module.exports.htmlDocImpl(obj, config, fs.readFileSync(path.join(__dirname, 'fancy.css')))
+    return module.exports.htmlDoc(obj, config, fs.readFileSync(path.join(__dirname, 'fancy.css')))
 }
 
 function init(config) {

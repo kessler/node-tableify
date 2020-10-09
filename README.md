@@ -1,7 +1,18 @@
 @kessler/tableify
 -------------
 
-A fork of [tableify](https://github.com/wankdanker/node-tableify) modified specifically for [license-report](https://github.com/ironSource/license-report). I removed all the cli usage code and dependencies.
+A fork of [tableify](https://github.com/wankdanker/node-tableify).
+All the cli rekated code and dependencies is removed.
+Add public methods for generating a complete html document with styling:
+```js
+var tableify = require('tableify')
+// just the table
+tableify({ foo: 'bar' })
+
+// html document with style
+tableify.htmlDoc({ foo: 'bar' })
+tableify.fancyHtmlDoc({ foo: 'bar' })
+```
 
 From any JavaScript object, HTML tables create.
 
